@@ -1,0 +1,126 @@
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!-- 玩家姓名輸入框 -->
+    <EditText
+        android:id="@+id/ed_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="請輸入玩家姓名"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 提示文字 -->
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="請輸入姓名已開始遊戲"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/ed_name"
+        app:layout_constraintTop_toBottomOf="@id/ed_name" />
+
+    <!-- 剪刀石頭布選擇 -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/tv_text"
+        app:layout_constraintTop_toBottomOf="@id/tv_text">
+
+        <RadioButton
+            android:id="@+id/btn_scissor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="剪刀"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/btn_stone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="石頭" />
+
+        <RadioButton
+            android:id="@+id/btn_paper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="布" />
+
+    </RadioGroup>
+
+    <!-- 開始猜拳按鈕 -->
+    <Button
+        android:id="@+id/btn_mora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="猜拳"
+        app:layout_constraintStart_toStartOf="@id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+    <!-- 玩家名稱 -->
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="名字"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_winner"
+        app:layout_constraintTop_toBottomOf="@id/btn_mora" />
+
+    <!-- 勝利者 -->
+    <TextView
+        android:id="@+id/tv_winner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="勝利者"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_name"
+        app:layout_constraintEnd_toStartOf="@id/tv_mmora"
+        app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+    <!-- 玩家出拳 -->
+    <TextView
+        android:id="@+id/tv_mmora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="我方出拳"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_winner"
+        app:layout_constraintEnd_toStartOf="@id/tv_cmora"
+        app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+    <!-- 電腦出拳 -->
+    <TextView
+        android:id="@+id/tv_cmora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="電腦出拳"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_mmora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
